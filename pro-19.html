@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+    <style>
+        #f1 {
+            background-color: rgba(35, 164, 192, 0.73);
+            font-size: medium;
+            border: 2px solid black;
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 30px;
+        }
+
+        #submit {
+            position: absolute;
+            left: 30%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(11, 222, 11, 0.581);
+            border: none;
+            border-radius: 5px;
+            width: 20vh;
+            height: 7vh;
+            box-shadow: 5px 3px 10px black;
+        }
+
+        #reset {
+            position: absolute;
+            left: 70%;
+            top: 70%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(231, 47, 14, 0.73);
+            border: none;
+            border-radius: 5px;
+            width: 20vh;
+            height: 7vh;
+            box-shadow: 5px 3px 10px black;
+        }
+
+        h1 {
+            text-align: center;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="f1" onsubmit="valid()">
+        <h1>
+            Login Page
+        </h1>
+        <label>Username:</label>
+        <input type="text" size="25" id="Username" /><br><br>
+        <label>Password :</label>
+        <input type="password" size="25" id="password" /><br><br>
+        <label>verify pas:</label>
+        <input type="password" size="25" id="confirm_password">
+        <input type="submit" id="submit" />
+        <input type="reset" id="reset" />
+
+    </form>
+    <script>
+        function valid() {
+            let User = document.getElementById('Username').value;
+            let Pass = document.getElementById('password').value;
+            let confirm = document.getElementById('confirm_password').value;
+            if (User === "" || Pass === "" || confirm === "") {
+                alert("Please Enter the value");
+                return false;
+
+            }
+            if (Pass.length < 6 || Pass.length > 10) {
+                alert("password mustbe between 6 to 10");
+                return false;
+            }
+            else if (Pass != confirm) {
+                alert("please enter same password");
+                return true;
+            }
+
+
+        }
+    </script>
+
+</body>
+
+</html>
